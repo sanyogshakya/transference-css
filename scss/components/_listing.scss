@@ -1,0 +1,104 @@
+.card-school {
+	margin-bottom: 20px;
+	@include media('>=desktop') {
+		margin-bottom: 30px;
+	}
+
+	.col-wrap {
+		border-radius: 50px;
+		padding: 40px 30px;
+
+		@include media('>=desktop') {
+			padding: 40px;
+		}
+
+		h3 {
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: -0.06em;
+		}
+	}
+
+	.link {
+		font-size: 18px;
+		font-weight: 600;
+		text-decoration: underline;
+		color: $text;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.card-level {
+	margin-bottom: 39px;
+	@include media('>=desktop') {
+		margin-bottom: 80px;
+	}
+	.col-wrap {
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	.img-wrap {
+		width: 150px;
+		margin: 0 auto 30px;
+		img {
+			max-width: 150px;
+			border-radius: 50%;
+		}
+	}
+
+	.text-wrap {
+		@include media('>=desktop') {
+			width: calc(100% - 150px );
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		h3 {
+			font-size: 22px;
+			margin-bottom: 25px;
+			font-weight: 700;
+		}
+	}
+}
+
+.school-lists-block {
+	.school-lists-wrap {
+		.btn-wrap {
+			.btn {
+				@include media('<tablet') {
+					display: block;
+				}
+				
+				&.btn-border {
+					&:hover {
+						border-color: $primary;
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+.school-level-lists-block {
+	.heading{
+		&.text-center {
+			@include media('<desktop') {
+				margin-bottom: 75px;
+			}
+		}
+		
+		h2 {
+			@include media('<desktop') {
+				font-size: 33px;
+				line-height: 1.2;
+			}
+		}
+	}
+}

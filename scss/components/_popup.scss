@@ -1,0 +1,31 @@
+.fancybox-content {
+	max-width: 400px;
+	color: $text;
+
+	.social-networks {
+		@extend %listreset;
+		display: flex;
+
+		li{
+			& + li {
+				margin-left: 15px;
+			}
+			a {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: $primary;
+				color: $white;
+				padding: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: 0.3s ease;
+
+				&:hover {
+					background: $deep-purple;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.team-block {
+    .heading {
+        max-width: 775px;
+        @include media('>=desktop') {
+            margin-bottom: 60px;
+        }
+        
+        p {
+            max-width: 100%;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .img-wrap {
+        border-radius: 20px;
+        margin-bottom: 40px;
+        
+        @include media('>=desktop') {
+            margin-bottom: 50px;
+        }
+    }
+}

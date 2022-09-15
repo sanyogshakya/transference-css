@@ -1,0 +1,75 @@
+.graduates-signin-block {
+    .text-wrap {
+        max-width: 505px;
+        // padding-top: 50px;
+        margin-bottom: 50px;
+        
+        @include media('>=desktop') {
+            margin-bottom: 0;
+        }
+    }
+    .form-wrap {
+        @extend %background-gradient1;
+		padding: 40px 30px;
+		border-radius: 50px;
+		
+		@include media('>=desktop') {
+		    padding: 50px;
+		}
+		
+		.checkbox-wrap {
+		    margin-top: 56px;
+		    
+		    @include media('>=desktop') {
+		        margin-top: 0;
+		    }
+		    
+		    input[type="checkbox"] + span:before,
+		    input[type="checkbox"] + label:before {
+		        background: transparent;
+		    }
+		}
+		
+		.submit-wrap {
+		    @include media('>=desktop') {
+		        margin-top: 40px;
+		    }
+		    
+		    .input[type="submit"] {
+		        width: 100%;
+		        
+		        @include media('>=desktop') {
+		            width: auto;
+		        }
+		    }
+		}
+		
+		.forget-password {
+		    margin-top: 15px;
+		    @include media('>=desktop') {
+		        margin-top: 60px;
+		    }
+		    
+		    a {
+		        font-weight: 600;
+		        line-height: 25px;
+		    }
+		    
+		    .signup {
+		        font-size: 16px;
+		        margin-top: 10px;
+		        a {
+		            text-decoration: underline;
+		            color: $white;
+		            
+		            &:hover {
+		                text-decoration: none;
+		            }
+		        }
+		        strong {
+		            font-weight: 600;
+		        }
+		    }
+		}
+    }
+}

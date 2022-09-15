@@ -1,0 +1,165 @@
+.training-lists-block {
+	.training-lists-wrap {
+		max-width: 1110px;
+		margin: 0 auto;
+	}
+
+	.col-12 {
+		& + .col-12 {
+			margin-top: 18px;
+
+			@include media('>=desktop') {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.col-wrap {
+		padding: 40px 30px;
+		border-radius: 30px;
+		height: 100%;
+
+		@include media('>=desktop') {
+			padding: 40px;
+		}
+
+		h3 {
+			font-size: 22px;
+			margin-bottom: 10px;
+			min-height: 37px;
+
+			@include media('>=desktop') {
+				letter-spacing: 0.01em;
+				margin-bottom: 11px;
+				min-height: 0;
+			}
+		}
+
+		.time {
+			font-size: 16px;
+			font-weight: 600;
+			display: block;
+			margin-bottom: 33px;
+			text-transform: uppercase;
+			letter-spacing: 0.03em;
+
+			@include media('>=desktop') {
+				margin-bottom: 32px;
+			}
+		}
+
+		p {
+			margin-bottom: 42px;
+
+			@include media('>=desktop') {
+				margin-right: -10px;
+			}
+		}
+
+		.training-type-lists {
+			@extend %listreset;
+			margin-bottom: 40px;
+
+			li {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 16px;
+
+				.title {
+					width: calc(100% - 63px);
+					padding-right: 20px;
+
+					@include media('>=desktop') {
+						width: 152px;
+					}
+				}
+
+				.price {
+					font-weight: 500;
+					width: 63px;
+					// text-align: right;
+					display: block;
+				}
+			}
+		}
+
+		.btn-lists {
+			.btn {
+				width: 100%;
+
+				& + .btn {
+					margin-top: 13px;
+
+					@include media('>=desktop') {
+						margin-top: 11px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.trainer-lists {
+	padding-top: 5px;
+	@include media('>=desktop') {
+		max-width: 1110px;
+		margin: 0 auto;
+		padding-top: 29px;
+	}
+	.trainer-list {
+		position: relative;
+		padding: 34px 0 28px;
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			padding: 51px 0 49px;
+		}
+		& + .trainer-list {
+			&:before {
+				content:"";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+				@extend %white-gradient-border;
+			}
+		}
+
+		.text {
+			@include media('>=desktop') {
+				max-width: 630px;
+			}
+
+			.price-time-wrap  {
+				margin-bottom: 12px;
+			}
+
+			h3 {
+				margin-bottom: 29px;
+				letter-spacing: 0.015em;
+
+				@include media('>=desktop') {
+					margin-bottom: 15px;
+				}
+			}
+
+			p {
+				line-height: 1.4;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.price-time-wrap {
+			.time,
+			.price {
+				display: block;
+				font-weight: 600;
+			}
+		}
+	}
+}

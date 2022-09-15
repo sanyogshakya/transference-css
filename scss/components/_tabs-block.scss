@@ -1,0 +1,385 @@
+.card-tab {
+	.col-wrap {
+	}
+
+	.tab-content-top {
+		padding: 20px;
+		// @extend %background-gradient1;
+		// background: rgba($white, 0.1);
+		border-radius: 160px 160px 0 0;
+
+		@include media('>=desktop') {
+			padding-bottom: 40px;
+		}
+	}
+
+	.img-wrap {
+		margin-bottom: 20px;
+		
+		@include media('>=desktop') {
+			// margin-bottom: 0;
+		}
+		img {
+			border-radius: 50%;
+			width: 100%;
+		}
+	}
+
+	.text-wrap {
+		text-align: center;
+		.name {
+			font-weight: 600;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.qualification {
+			display: block;
+			margin-bottom: 20px;
+		}
+
+		.link {
+			color: $white;
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+}
+
+.tabs {
+	@extend %listreset;
+	position: relative;
+	padding-bottom: 20px;
+	display: none;
+	@include media('>=desktop') {
+		display: block;
+	}
+	
+	&:before {
+		content:"";
+		@extend %white-gradient-border;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+	}
+	
+	li {
+		display:inline-block;
+		vertical-align:top;
+
+		& + li {
+			margin-left: 50px;
+		}
+		
+		&.tab-active {
+			a {
+				color: $white;
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+		
+		a {
+			color: rgba($white, 0.5);
+			font-weight: 700;
+			font-size: 22px;
+			position: relative;
+			
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -22px;
+				background: $primary;
+				height: 2px;
+				opacity: 0;
+				transition: 0.3s ease;
+			}
+		}
+	}
+}
+
+.tab-drawer-heading {
+	margin: 0;
+	display: block;
+	@include media('>=desktop') {
+		display: none;
+	}
+	
+	&.d-active {
+		a {
+			&:before {
+				transform: translateY(-50%) rotate(-45deg);
+				margin-top: 4px;
+			}
+		}
+	}
+	a {
+		display: block;
+		font-size: 22px;
+		color: $white;
+		font-weight: 700;
+		position: relative;
+		padding: 20px 40px 20px 0;
+
+		&:before{
+			content:"";
+			position: absolute;
+			top: 50%;
+			right: 4px;
+			width: 20px;
+			height: 20px;
+			border-style: solid;
+			border-width: 2px 2px 0 0;
+			border-color: $white $white transparent transparent;
+			transform: translateY(-50%) rotate(136deg);
+			margin-top: -11px;
+		}
+
+		&:after {
+			content:"";
+			@extend %white-gradient-border;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+		}
+	}
+}
+
+.tabs-container {
+	.tab-content{
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.tab-content-wrap {
+		padding: 40px 0;
+		
+		@include media('>=desktop') {
+			padding-top: 50px;
+		}
+		
+		.sub-category-lg {
+			margin: 0 -15px 30px;
+			display: none;
+			
+			@include media('>=desktop') {
+				display: block;
+			}
+			
+			.title {
+				display: inline-block;
+				margin: 0 15px 10px;
+				color: $white;
+				font-size: 22px;
+				
+				&.active {
+					font-weight: 700;
+				}
+			}
+		}
+
+		.sort-form {
+			// max-width: 150px;
+			margin-bottom: 40px;
+			display: block;
+
+			@include media('>=desktop') {
+				margin-bottom: 60px;
+				display: none;
+			}
+
+			.select-wrap {
+				border: none;
+				// max-width: 150px;
+				max-width: 250px;
+				
+				.select2-container {
+					width: 100% !important;
+				}
+
+				.select2-container--default .select2-selection--single .select2-selection__rendered {
+					// display: block;
+					display:inline-block;
+					height: auto;
+					padding: 9px 0;
+				}
+			}
+
+			select {
+				display: none;
+			}
+		}
+	}
+}
+
+.tab-description {
+	display: none;
+	position: relative;
+	z-index: 2;
+
+	@include media('>=desktop') {
+		width: 100vw;
+		max-width: 974px;
+	}
+
+	@include media('>=widescreen') {
+		max-width: 1120px;
+	}
+
+	@include media('>=1440px') {
+		max-width: 1140px;
+	}
+
+	&-wrap {
+		// position: absolute;
+		// left: 0;
+		// right: 0;
+		padding: 20px 20px 40px;
+		@extend %background-gradient1;
+		// background: rgba($white, 0.1);
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 40px 50px;
+			border-radius: 50px;
+		}
+
+		@include media('>=widescreen') {
+			padding: 49px 90px;
+		}
+
+		.tab-desc-content {
+			margin-bottom: 40px;
+			@include media('>=desktop') {
+				width: 60%;
+				margin-bottom: 0;
+			}
+			.content-wrap {
+				@include media('>=desktop') {
+					max-width: 555px;
+				}
+
+				ul {
+					li {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+
+		.img-wrap {
+			@include media('>=desktop') {
+				text-align: right;
+				width: 40%;
+				margin-bottom: 0;
+			}
+
+			img {
+				border-radius: 50%;
+				width: 100%;
+				@include media('>=desktop') {
+					max-width: 305px;
+				}
+			}
+		}
+	}
+}
+
+.tabs-block {
+	.tabs-list {
+		.row {
+			margin: 0;
+		}
+	}
+	
+	.slick-slider {
+		.slick-list {
+			padding-right: 100px;
+			margin-right: -26px;
+		}
+	}
+	
+	.card-tab {
+		padding: 0;
+		@include media('>=desktop') {
+			margin-bottom: 60px;
+		}
+
+		&.tab-list-active {
+			.tab-content-top {
+				background: rgba($white, 0.1);
+				@include media('>=desktop') {
+					// background: rgba($white, 0.1);
+				}
+			}
+			.tab-description {
+				display: block;
+			}
+		}
+
+		&:nth-of-type(4n+1) {
+			.tab-description {
+				// @include media('>=desktop') {
+				// 	left: -20px;
+				// }
+			}
+
+			.tab-description-wrap {
+				@include media('>=desktop') {
+					border-top-left-radius: 0;
+				}
+			}
+		}
+
+		&:nth-of-type(4n+2) {
+			.tab-description {
+				@include media('>=desktop') {
+					left: -100%;
+				}
+			}
+		}
+
+		&:nth-of-type(4n+3) {
+			.tab-description {
+				@include media('>=desktop') {
+					left: -200%;
+				}
+			}
+		}
+
+		&:nth-of-type(4n+4) {
+			.tab-description {
+				@include media('>=desktop') {
+					left: -300%;
+				}
+			}
+
+			.tab-description-wrap {
+				@include media('>=desktop') {
+					border-top-right-radius: 0;
+				}
+			}
+		}
+	}
+}
+
+.select2-search--hide {
+	display: none !important;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+	@extend %listreset;
+}

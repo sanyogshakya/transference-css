@@ -1,0 +1,52 @@
+.account-page {
+    .woocommerce-MyAccount-navigation {
+        margin-bottom: 30px;
+        
+        @include media('>=desktop') {
+            margin-bottom: 0;
+        }
+        
+        ul {
+            @extend %listreset;
+            
+            li {
+                margin-bottom: 10px;
+                
+                &.is-active {
+                    a {
+                        font-weight: 700;
+                        text-decoration: none;
+                    }
+                }
+                
+                a {
+                    color: $white;
+                    text-decoration: underline;
+                    transition: color 0.3s ease-in-out;
+                    
+                    &:hover {
+                        color: rgba($white, 0.5);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    .woocommerce-MyAccount-content {
+        .button {
+            @extend .btn;   
+        }
+        
+        a:not(.button) {
+            color: $white;
+            text-decoration: underline;
+            transition: color 0.3s ease-in-out;
+                    
+            &:hover {
+                color: rgba($white, 0.5);
+                text-decoration: none;
+            }
+        }
+    }
+}

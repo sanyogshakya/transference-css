@@ -1,0 +1,210 @@
+.get-in-touch-block {
+	.get-in-touch-box {
+		@extend %background-gradient1;
+		padding: 40px 30px;
+		border-radius: 50px;
+
+		h2 {
+			margin-bottom: 30px;
+		}
+	}
+	
+	.get-in-touch-wrap {
+		.gform_validation_errors {
+			.gform_submission_error  {
+				text-align: left;
+			}
+		}
+		
+		.h2 {
+			
+		}
+	}
+
+	.row {
+		margin: 0 -40px;
+	}
+
+	.col {
+		padding: 0 40px;
+		.col-wrap {
+			@extend %background-gradient1;
+			border-radius: 50px;
+			height: 100%;
+			text-align: center;
+			padding: 40px 30px;
+			
+			@include media('>=tablet') {
+				text-align: left;
+			}
+			
+			@include media('>=desktop') {
+				padding: 50px;
+			}
+
+			h2 {
+				@include media('<tablet') {
+					font-size: 33px;
+				}
+				@include media('>=desktop') {
+					margin-bottom: 30px;
+				}
+			}
+
+			strong {
+				font-weight: 600;
+			}
+
+			p {
+				@include media('>=desktop') {
+					margin-bottom: 33px;
+				}
+			}
+
+			ul.address {
+				@extend %listreset;
+
+				@include media('>=desktop') {
+					margin-top: 52px;
+				}
+
+				li {
+					margin-bottom: 34px;
+					position: relative;
+
+					@include media('>=desktop') {
+						margin-bottom: 35px;
+					}
+					
+					&:before {
+						content:"";
+						position: absolute;
+						width: 28px;
+						height: 28px;
+						background: rgba($white, 0.08);
+						border-radius: 50%;
+						left: 50%;
+						transform: translateX(-50%);
+						
+						@include media('>=tablet') {
+							left: 0;
+							transform: none;
+						}
+					}
+					
+					&.phone {
+						&:before {
+							top: 2px;
+							
+							@include media('>=tablet') {
+								left: 0;	
+							}
+						}
+					}
+
+					&.mail {
+						&:before {
+							top: -2px;
+							
+							@include media('>=tablet') {
+								left: 0;
+							}
+						}
+						
+						a {
+							img {
+								top: 3px;
+							}
+						}
+					}
+
+					&.location {
+						&:before {
+							top: -6px;
+							
+							@include media('>=tablet') {
+								left: -3px;
+							}
+							
+						}
+						
+						a {
+							img {
+								top: -7px;
+							}
+						}
+					}
+
+					a {
+						text-decoration: underline;
+						font-weight: 600;
+						position: relative;
+						display:inline-block;
+						vertical-align:top;
+						padding-top: 50px;
+						color: $white;
+						
+						@include media('>=tablet') {
+							padding:  0 0 0 47px;	
+						}
+
+						img {
+							position: absolute;
+							top: 0;
+							left: 50%;
+							max-width: 29px;
+							transform: translateX(-50%);
+							
+							@include media('>=tablet') {
+								left: 1px;
+								transform: none;
+							}
+						}
+
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			
+			.social-networks {
+				display: none;
+				@extend %listreset;
+				
+				@include media('>=desktop') {
+					display: block;
+				}
+				
+				li {
+					display: inline-block;
+					margin-right: 10px;
+					
+					a {
+						display: block;
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						
+						&:hover {
+							opacity: .7;
+						}
+					}
+				}
+			}
+		}
+
+		input[type='submit'] {
+			background: darken($primary, 5%);
+			border-color: darken($primary, 5%);
+			
+			@include media('<tablet') {
+				width: 100%;
+			}
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+}

@@ -1,0 +1,148 @@
+.content-with-image {
+	.spot {
+		top: 15rem;
+		left: -23rem;
+	}
+	&-wrap {
+		border-radius: 50px;
+		padding: 40px 30px;
+		max-width: 1088px;
+		margin: 0 auto;
+
+		@include media('>=desktop') {
+			padding: 50px;
+		}
+
+		.col{
+			flex-basis: inherit;
+			flex-grow: 0;
+		}
+
+		.col-image {
+			margin-bottom: 41px;
+			@include media('>=desktop') {
+				width: 44.7%;
+				margin-bottom: 0;
+			}
+		}
+		.col-text {
+			@include media('>=desktop') {
+				width: 55.3%;
+			}
+
+			.text-wrap {
+				@include media('>=desktop') {
+					padding-left: 51px;
+				}
+			}
+
+			h2 {
+				margin-bottom: 21px;
+			}
+
+			p {
+				line-height: 1.4;
+				margin-bottom: 20px;
+				strong {
+					font-weight: 600;
+				}
+
+				&:nth-last-of-type(1) {
+					margin-bottom: 38px;
+				}
+			}
+		}
+
+		.img-wrap {
+			position: relative;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			padding: 17px;
+			border-radius: 50%;
+
+			@include media('>=desktop') {
+				padding: 28px;
+			}
+
+			.img-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.6;
+				}
+			}
+
+			img {
+				width: 100%;
+				border-radius: 50%;
+			}
+
+			> img {
+				position: relative;
+			}
+		}
+
+		.btn-wrap {
+			text-align: center;
+
+			@include media('>=desktop') {
+				display: flex;
+				text-align: left;
+			}
+
+			.btn {
+				@include media('>=desktop', '<widescreen') {
+					min-width: 198px;
+				}
+			}
+
+			.btn:not(.btn-border) {
+				// background: darken($primary, 10%);
+				
+				
+				
+				&:hover {
+					border-color: $deep-purple;
+					background: $deep-purple;
+				}
+				& + .btn {
+					margin-top: 15px;
+					@include media('>=desktop') {
+						margin: 0 0 0 15px;
+					}
+				}
+			}
+			
+			ul {
+				@extend %listreset;
+				
+				@include media('>=desktop') {
+					display: flex;
+					flex-wrap: wrap;
+					margin: 0 -8px;
+					width: 100%;
+				}
+				
+				li {
+					margin-bottom: 16px;
+					
+					@include media('>=desktop') {
+						padding: 0 8px;
+						max-width: 50%;
+						flex-basis: 50%;
+					}
+				}
+			}
+		}
+	}
+}

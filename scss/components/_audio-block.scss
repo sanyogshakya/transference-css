@@ -1,0 +1,137 @@
+.audio-block {
+	.spot {
+		top: 95px;
+		right: -26rem;
+	}
+	.audio-block-wrap {
+		border-radius: 50px;
+		padding: 40px 30px;
+		max-width: 1120px;
+		margin: 0 auto;
+
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 50px;
+		}
+
+		.audio-heading {
+			margin-bottom: 50px;
+			@include media('>=desktop') {
+				width: 40%;
+				margin-bottom: 0;
+				padding-right: 30px;
+			}
+			h2 {
+				@include media('>=desktop') {
+					margin-bottom: 22px;
+				}
+				br {
+					@include media('<desktop') {
+						display: none;
+					}
+				}
+			}
+
+			p {
+				line-height: 1.4;
+				margin-bottom: 38px;
+			}
+		}
+
+		.audio-player {
+			border-top: 1px solid rgba($text, 0.05);
+			padding-top: 48px;
+
+			@include media('>=desktop') {
+				width: 60%;
+				border-top: none;
+				border-left: 1px solid rgba($text, 0.05);
+				padding-top: 0;
+				padding-left: 43px;
+				display: flex;
+				align-items: center;
+			}
+
+			&-wrap {
+				position: relative;
+				width: 100%;
+				.audio-title {
+					display: block;
+					text-transform: uppercase;
+					margin-bottom: 2px;
+					@include media('>=desktop') {
+						font-size: 23px;
+						margin-bottom: 7px;
+					}
+				}
+				time {
+					display: block;
+					font-size: 16px;
+					color: rgba($text, 0.8);
+					text-transform: uppercase;
+
+					@include media('>=desktop') {
+						font-size: 20px;
+					}
+				}
+
+				.player-title-wrap {
+					position: relative;
+					padding-left: 58px;
+					margin-bottom: 54px;
+					@include media('>=desktop') {
+						padding-left: 71px;
+						margin-bottom: 61px;
+					}
+
+					.mejs-playpause-button {
+						position: absolute;
+						top: 0;
+						left: 0;
+						@include media('>=desktop') {
+							top: 8px;
+						}
+						&.mejs-pause {
+							button {
+								&:before {
+									content: "\f04c";
+								}
+							}
+						}
+						button {
+							font-size: 0;
+							border: none;
+							outline: none;
+							padding: 0;
+							background: transparent;
+							&:before {
+								content: "\f04b";
+								font-family: 'FontAwesome';
+								font-size: 42px;
+								line-height: 1.2;
+								color: $primary;
+							}
+						}
+					}
+				}
+
+				.mejs__container {
+					width: 100% !important;
+				}
+
+				.mejs__playpause-button {
+					display: none;
+				}
+			}
+		}
+
+		.btn-wrap {
+			text-align: center;
+
+			@include media('>=desktop') {
+				text-align: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,124 @@
+.woocommerce-account {
+    background: $deep-purple;
+
+    #main {
+        padding-top: 80px;
+        
+        @include media('>=desktop') {
+            padding-top: 120px;
+        }
+    }
+    
+    #customer_login {
+        width: auto;
+        
+        .col-wrap {
+            @extend %background-gradient1;
+    		padding: 40px 30px;
+    		border-radius: 50px;
+    		
+    		@include media('>=desktop') {
+    		    padding: 50px;
+    		}
+    		
+    		form {
+    		    &.login,
+    		    &.register {
+    		        border: none;
+    		        padding: 0;
+    		    }
+    		}
+        }
+    }
+    
+    .u-column1 {
+        margin-bottom: 40px;
+        
+        @include media('>=desktop') {
+            margin-bottom: 0;
+        }
+    }
+    
+    .woocommerce form {
+        .form-row {
+            margin-bottom: 20px;
+            padding: 0;
+            
+            &.form-remember {
+                align-items: center;
+            }
+            
+            .woocommerce-form-login__rememberme {
+                // margin: 0;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .woocommerce-form-register__submit,
+        .woocommerce-form-login__submit {
+            width: 100%;
+            margin-right: 0;
+            
+            @include media('>=desktop') {
+                width: auto;
+            }
+        }
+        
+        .password-input {
+            width: 100%;
+        }
+        
+        .password-input {
+            input[type="password"] {
+                padding-right: 3.5rem;
+            }
+        }
+        
+        .show-password-input {
+            top: 20px;
+            right: 1.5em;
+        }
+        
+        .woocommerce-button {
+            @extend .btn;
+            
+            &:hover {
+                background: darken($primary, 10%);
+                border-color: darken($primary, 10%);
+            }
+        }
+    }
+    
+    button.button {
+        @extend .btn;
+            
+        &:hover {
+            background: darken($primary, 10%);
+            border-color: darken($primary, 10%);
+        }
+    }
+    
+    input[type="checkbox"] + label,
+    input[type="checkbox"] + span {
+        line-height: 1.5;
+    }
+    
+    .woocommerce-privacy-policy-text {
+        // font-size: 16px;
+        font-size: 12px;
+    }
+    
+    .lost_password,
+    .page-section {
+        a {
+            color: $white;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

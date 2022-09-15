@@ -1,0 +1,88 @@
+/*
+Theme Name: Transference Healing
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: Transference Healing
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1200px,
+  'large': 1440px,
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+
+//@import 'base/fonts';
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/typography';
+@import 'base/reset';
+@import 'base/cms-reset';
+@import 'base/forms';
+
+@import 'components/slick';
+@import 'components/common';
+@import 'components/header';
+@import 'components/navigation';
+@import 'components/footer';
+@import 'components/slider';
+@import 'components/banner';
+@import 'components/intro';
+@import 'components/hf-img-hf-content';
+@import 'components/product-block';
+@import 'components/testimonials-block';
+@import 'components/accordion';
+@import 'components/faq';
+@import 'components/get-in-touch';
+@import 'components/audio';
+@import 'components/audio-block';
+@import 'components/content-with-image';
+@import 'components/image-gallery';
+@import 'components/training-lists';
+@import 'components/classroom';
+@import 'components/detail-intro';
+@import 'components/training-content';
+@import 'components/cta-block';
+@import 'components/popup';
+@import 'components/shop';
+@import 'components/listing';
+@import 'components/tabs-block';
+@import 'components/bookings';
+@import 'components/pagination';
+@import 'components/product-detail';
+@import 'components/cart';
+@import 'components/login-registration';
+@import 'components/account';
+@import 'components/_404';
+@import 'components/_team';
+@import 'components/_graduates-gateway';
+@import 'components/_graduates-gateway-signin';
+@import 'components/_checkout';
+@import 'components/_course-detail';

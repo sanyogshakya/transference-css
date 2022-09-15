@@ -1,0 +1,197 @@
+.card-classroom {
+	.card-wrap {
+		// background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 100%);
+		@extend %background-gradient1;
+		// opacity: 0.1;
+		border-radius: 30px;
+		padding: 20px;
+
+		@include media('>=desktop') {
+			padding: 24px;
+		}
+
+		.img-wrap {
+			margin-bottom: 11px;
+			border-radius: 30px;
+			overflow: hidden;
+			position: relative;
+			padding-top: 100%;
+			background: $black;
+
+			img {
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				object-fit: cover;
+				// object-fit: contain;
+				// border-radius: 30px;
+			}
+		}
+
+		.text-wrap {
+			h4 {
+				line-height: 1.4;
+				margin-bottom: 16px;
+				a {
+					color: $white;
+
+					&:hover {
+						color: rgba($white, 0.5);
+					}
+				}
+			}
+
+			.title {
+				font-weight: 600;
+				display: block;
+				margin-bottom: 7px;
+			}
+
+			.time {
+				display: block;
+				text-transform: uppercase;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.04em;
+			}
+		}
+
+		.course-bottom {
+			display: flex;
+			align-items: center;
+			margin-top: 31px;
+			justify-content: space-between;
+
+			@include media('>=desktop') {
+				margin-top: 33px;
+			}
+
+			.btn {
+				background: $primary;
+				color: $white;
+				padding: 8px 10px;
+				margin-right: 17px;
+				min-width: 180px;
+				font-weight: 600;
+
+				&:hover {
+					background: darken($primary, 5%);
+				}
+			}
+
+			.price {
+				font-weight: 500;
+			}
+		}
+	}
+
+	.tags {
+		@extend %listreset;
+		margin: 0 -5px 15px;
+		li {
+			padding: 0 5px;
+			margin-bottom: 10px;
+			a {
+				font-size: 12px;
+				letter-spacing: -0.05em;
+				font-weight: 600;
+				text-transform: uppercase;
+				display: inline-flex;
+				border-radius: 5px;
+				background: $white;
+				color: $primary;
+				padding: 5px 10px;
+				min-width: 136px;
+				text-align: center;
+				justify-content: center;
+				letter-spacing: 0.03em;
+			}
+		}
+	}
+}
+
+.classroom-block {
+
+}
+
+.classroom-slider {
+	.slick-list {
+		margin: 0 -15px;
+		@include media('>=desktop') {
+			padding-right: 240px;
+			margin-right: -25px;
+		}
+
+		@include media('>=widescreen') {
+			margin-right: -120px;
+			padding-right: 240px;
+		}
+
+		@include media('>=large') {
+			padding-right: 266px;
+			margin-right: -190px;
+		}
+	}
+
+	.slick-slide {
+		padding: 0 15px;
+
+		.card-wrap {
+			@include media('>=large') {
+				max-width: 320px;
+			}
+		}
+	}
+
+	.slick-dots {
+		margin-top: 30px;
+
+		@include media('>=desktop') {
+			text-align: left;
+			margin: 27px -6px;
+		}
+	}
+}
+
+.course-lists {
+	max-width: 1110px;
+	margin: 0 auto;
+
+	& + .course-lists {
+		margin-top: 82px;
+
+		@include media('>=desktop') {
+			margin-top: 61px;
+		}
+	}
+
+	.sub-heading {
+		position: relative;
+		padding-bottom: 31px;
+		margin-bottom: 29px;
+		font-size: 22px;
+		letter-spacing: -0.046em;
+
+		@include media('>=desktop') {
+			letter-spacing: -0.04em;
+			padding-bottom: 26px;
+			margin-bottom: 59px;
+		}
+
+		&:before {
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			@extend %white-gradient-border;
+		}
+	}
+}
+
+.classroom-slider {
+
+}

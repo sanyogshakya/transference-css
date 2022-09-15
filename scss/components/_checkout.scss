@@ -1,0 +1,536 @@
+.booking-block {
+	.form-footer {
+		&.last {
+			padding-top: 0;
+			@include media('>=desktop') {
+				margin-top: -65px;
+			}
+		}
+	}
+	
+    .col-content {
+       .woocommerce-form-coupon {
+            p {
+                margin-bottom: 20px;
+            }
+            
+            .button {
+                @extend .btn;
+                
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+        
+        .shipping-method-wrap {
+            .radio-border {
+                input[type="radio"] {
+                    &:checked {
+                        + label{
+                            &:after {
+                                @include media('<tablet') {
+                                    left: 33px;
+                                }
+                            }
+                        }
+                    }
+                    
+                    + span, 
+                    + label {
+                        @include media('<tablet') {
+                            padding-left: 70px !important;
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                        
+                        &:before {
+                           @include media('<tablet') {
+                               left: 30px;
+                           } 
+                        }
+                        
+                        .text {
+                            padding-right: 15px;
+                        }
+                        
+                        strong {
+                           font-weight: 400;
+                           
+                           @include media('<tablet') {
+                               font-weight: 600;
+                               display: block;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .col-sidebar {
+        .checkout-sidebar-lists {
+            .img-wrap {
+                position: relative;
+                width: 120px;
+                
+                @include media('>=tablet') {
+                    width: 140px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+                
+                .qty {
+                    position: absolute;
+                    top: -12px;
+                    right: -14px;
+                    width: 30px;
+                    height: 30px;
+                    background: $primary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px;
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 600;
+                    border-radius: 50%;
+                }
+            } 
+            
+            .text {
+                padding-left: 20px;
+                width: calc(100% - 120px);
+                
+                @include media('>=tablet') {
+                    width: calc(100% - 140px);
+                }
+            }
+            
+            li {
+                .text {
+                    .title {
+                        margin-bottom: 22px;
+                    }
+                }
+            }
+        }
+        
+        .subtotal-wrap {
+			position: relative;
+			padding: 30px 0;
+
+			&:before {
+				content:"";
+				@extend %gray-gradient-border;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+			}
+			
+			ul {
+			    @extend %listreset;
+			    li {
+			        display: flex;
+			        align-items: center;
+			        justify-content: space-between;
+			        
+			        & + li {
+			            margin-top: 15px;
+			        }
+			        
+			        .subtotal-title {
+        				max-width: 150px;
+        				display: block;
+        				padding-right: 30px;
+        			}
+        
+        			.subtotal-price {
+        				font-weight: 600;
+        			}
+			    }
+			}
+
+			
+		}
+    }
+}
+
+.woocommerce-checkout {
+	#main {
+		position: relative;
+		z-index: 1;
+	}
+	
+    .woocommerce-billing-fields {
+        margin-bottom: 40px;
+    }
+    
+    .woocommerce-additional-fields__field-wrapper,
+    .woocommerce-billing-fields__field-wrapper {
+        .form-row {
+           margin-bottom: 22px;
+           padding: 0;
+           display: block;
+           
+           @include media('>=desktop') {
+               margin-bottom: 32px;
+           }
+
+           &.form-row-first,
+           &.form-row-last {
+               width: 100%;
+               @include media('>=desktop') {
+                   width: 49%;
+               }
+           }
+           
+           label {
+               line-height: 1.2;
+           }
+           
+           .woocommerce-input-wrapper {
+               display: block;
+           }
+           
+           textarea {
+               height: 150px;
+               
+               @include media('>=desktop') {
+                //   height: 150px;
+               }
+           }
+        }
+    }
+    
+	.shipping-list {
+		@extend %listreset;
+		list-style: none;
+		padding: 0 20px;
+		border-radius: 30px;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+		margin-bottom: 60px;
+
+		@include media('>=tablet') {
+			padding: 0 40px;
+		}
+		
+		@include media('>=desktop') {
+		    margin-bottom: 80px;
+		}
+
+		li {
+			padding: 22px 80px 22px 0;
+			position: relative;
+			font-size: 14px;
+			line-height: 25px;
+			display: block !important;
+
+			@include media('>=tablet') {
+				display: flex !important;
+				flex-wrap: wrap;
+				font-size: 18px;
+				padding: 30px 90px 30px 0;
+			}
+
+			& + li {
+				&:before {
+					content: "";
+					@extend %white-gradient-border;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: 2px;
+				}
+			}
+
+			a {
+				color: $white;
+
+				&:hover {
+					color: $gray;
+				}
+			}
+
+			.title {
+				display: block;
+				@include media('>=tablet') {
+					width: 30%;
+					padding-right: 20px;
+				}
+				
+				@include media('>=desktop') {
+				    width: 25%;
+				}
+			}
+
+			.desc {
+				font-weight: 600;
+				@include media('>=tablet') {
+					width: 70%;
+				}
+				
+				@include media('>=desktop') {
+				    width: 75%;
+				}
+			}
+			
+			.change {
+    			color: $white;
+    			text-decoration: underline;
+    			position: absolute;
+    			top: 50%;
+    			right: 0;
+    			transform: translateY(-50%);
+    
+
+    			&:hover {
+    				text-decoration: none;
+    				color: $white;
+    			}
+    		}
+		}
+	}
+	
+// 	.step1 {
+// 	    display: none !important;
+// 	}
+// 	.step3 {
+// 	    display: block !important;
+// 	}
+	
+	.wc-stripe-error {
+	    padding-left: 40px !important;
+	    
+	    &:before {
+	        top: 5px;
+	        left: 1em;
+	    }
+	}
+	
+	#payment {
+	    background: transparent;
+	    
+	    ul.payment_methods {
+	        padding: 0 0 30px;
+	        
+	        .wc_payment_method {
+	            display: block !important;
+	            
+	            & + .wc_payment_method {
+	                margin-top: 20px;
+	            }
+	            
+	            
+    			// padding-top: 43px;
+    			input[type="radio"] {
+    				&:checked {
+    					& + label {
+    						background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+    						// border-color: transparent;
+    						border: none;
+    
+    						&:before {
+    							background: $primary;
+    						}
+    
+    						&:after {
+    							top: 50%;
+    							left: 43px;
+    							margin-top: -7px;
+    						}
+    					}
+    				}
+    
+    				+ label,
+    				+ span {
+    					border: 3px solid rgba($white, 0.1);
+    					border-radius: 30px;
+    					font-weight: 400;
+    					padding: 20px 20px 20px 85px !important;
+    					width: 100%;
+    
+    					@include media('>=desktop') {
+    						// padding-right: 40px !important;
+    						padding: 32px 40px 33px 85px !important;
+    					}
+    
+    					&:before{
+    						background: transparent;
+    						top: 50%;
+    						left: 40px;
+    						transform: translateY(-50%);
+    					}
+    
+    					.label-wrap {
+    						display: flex;
+    						align-items: center;
+    						justify-content: space-between;
+    
+    						&:before {
+    							content:"";
+    							position: absolute;
+    							top: 0;
+    							left: 0;
+    						}
+    					}
+    				}
+    			}
+	            
+	        }
+	    }
+	    
+	    div.payment_box {
+	        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+	        color: $white;
+	        margin-top: 0;
+	        border-radius: 20px;
+	        padding: 30px 20px;
+	        
+	        &:before {
+	            display: none;
+	        }
+	        
+	        @include media('>=desktop') {
+	            padding: 40px 30px;
+	        }
+	        
+	        p {
+	            margin-bottom: 20px !important;
+	        }
+	        
+	        a {
+	            color: $white;
+	            text-decoration: underline;
+	            
+	            &:hover {
+	                text-decoration: none;
+	            }
+	        }
+	        
+	        .form-row {
+	            display: block;
+	            padding: 0;
+	            
+	            @include media('<phone') {
+	            	width: 100%;
+	            }
+	            
+	            label {
+	                line-height: 1.2;
+	            }
+	            
+	            .stripe-card-group {
+	                display: block;
+	                
+	                
+	            }
+	            
+	            .wc-stripe-elements-field {
+                   margin: 0;
+                   // background: red !important;
+                   border-color: rgba($white, 0.3) !important;
+	               //background: linear-gradient(137.53deg, rgba(97, 94, 155, 0.1) 6.73%, rgba(255, 255, 255, 0.1) 109.12%) !important;
+	               padding: 20px 25px !important;
+	               border-radius: 50px !important;
+	               height: 60px !important;
+	               //background: rgba($white, 0.7) !important;
+                   
+                   input {
+                       height: 60px;
+                   }
+                }
+	            
+	            #ppcp-credit-card-gateway-card-number,
+	            #ppcp-credit-card-gateway-card-expiry,
+	            #ppcp-credit-card-gateway-card-cvc {
+	                border-color: rgba($white, 0.3) !important;
+	                background: linear-gradient(137.53deg, rgba(97, 94, 155, 0.1) 6.73%, rgba(255, 255, 255, 0.1) 109.12%) !important;
+	                padding: 5px 25px !important;
+	            }
+	        }
+	    }
+	    
+	    & + #ppc-button[style="display: block;"]{
+	    	.paypal-buttons {
+	    		margin-bottom: 25px;
+	        	@include media('>=desktop') {
+	        		float: right;
+	        		margin-bottom: 0;
+	        		width: calc(100% - 300px);
+	        	}
+	        }
+	        
+	        & + .form-footer.last {
+	        	@include media('>=desktop') {
+	        		margin: 20px 0 0;
+	        	}
+	        }
+	    }
+	    
+	    
+	    
+	    div.form-row {
+	        padding-left: 0;
+	        padding-right: 0;
+	        
+	        &.place-order {
+	        	display: block;
+	        }
+	        
+	        .woocommerce-privacy-policy-text {
+                p {
+                    margin-bottom: 20px !important;
+                    
+                    a {
+                        color: $white;
+                        text-decoration: underline;
+                        
+                        &:hover {
+                            color: $white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            
+            #ppcp-hosted-fields {
+            	@include media('>=desktop') {
+            		float: right;
+            	}
+            	
+            	.button {
+            		@extend .btn;
+            		width: 100%;
+            		
+            		@include media('>=desktop') {
+            			width: auto;
+            		}
+                
+	                &:hover {
+	                    background-color: darken($primary, 10%);
+	                }
+            	}
+            }
+            
+            button[type="submit"] {
+                @extend .btn;
+                
+                &:hover {
+                    background-color: darken($primary, 10%);
+                }
+            }
+	    }
+	}
+}
+
+.ElementsApp,
+.ElementsApp .InputElement,
+.ElementsApp input {
+    color: $white !important;
+}

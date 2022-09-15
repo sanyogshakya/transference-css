@@ -1,0 +1,1155 @@
+.single-post-wrapper,
+.course-list-wrapper {
+	padding: rem-calc(124px 0 60px);
+	font-size: rem-calc(16px);
+	padding-top: 0;
+	
+	.ld-profile-summary {
+		padding-top: rem-calc(124px);
+	}
+}
+
+.single-post-wrapper {
+	.ld-course-list-items {
+		.ld_course_grid {
+			
+			.thumbnail.course {
+				
+				.ld_course_grid_price,
+				.ribbon {
+					background-color: $primary;
+					font-weight: 500;
+					text-shadow: none;
+					
+					&:before {
+						border-top-color: darken($primary, 6%);
+						border-right-color: darken($primary, 6%);
+					}
+					
+					// Price element styles
+					// &.price_USD,
+					// &.price_$ {
+					// 	position: static;
+					// 	box-shadow: none;
+					// 	font-size: 18px;
+					// 	background-color: transparent;
+					// 	padding: 0;
+						
+					// 	&:before {
+					// 		content: none;
+					// 	}
+					// }
+					
+					&.ribbon-enrolled {
+						background-color: $primary;
+						
+						&:before {
+							border-top-color: darken($primary, 6%);
+							border-right-color: darken($primary, 6%);
+						}
+					}
+					
+					+ a {
+						position: relative;
+						display: block;
+						margin-bottom: 8px;
+						padding-top: calc( (200 / 300) * 100% );
+						
+						img {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							object-position: 50% 50%;
+						}
+					}
+				}
+				
+				.ribbon {
+					background-color: $primary;
+					
+					&:before {
+						border-top-color: darken($primary, 6%);
+						border-right-color: darken($primary, 6%);
+					}
+				}
+			}
+			
+			.ld_course_grid_button  {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 33px !important;
+				
+				a {
+					&.btn {
+						width: auto;
+					}
+				}
+			}
+		}
+		
+		.slick-dots {
+			margin-left: 10px;
+		}
+	}
+	
+	.learndash-wrapper {
+		.ld-profile-summary {
+			.ld-profile-card {
+				.ld-profile-edit-link,
+				.invoive-link {
+					color: $white;
+					text-decoration: underline;
+					
+					&:hover {
+						text-decoration: none;
+						color: rgba($white, 0.5);
+					}
+				}
+				
+				.invoive-link {
+					font-size: 14px;
+					
+					&:before {
+						content: '';
+						margin: 0 12px 0 8px;
+						border-right: 1px solid $white;
+					}
+				}
+			}
+			
+			.ld-profile-stats {
+				.ld-profile-stat {
+					span {
+						color: $white;
+					}
+				}
+			}
+		}
+		
+		&.learndash-widget {
+			.ld-progress {
+			.ld-progress-heading {
+					
+					.ld-progress-stats {
+						.ld-progress-percentage {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+		
+		.ld-progress {
+			.ld-progress-heading {
+				.ld-progress-label {
+					color: $primary;
+				}
+				
+				.ld-progress-stats {
+					.ld-progress-percentage {
+						color: $deep-purple;
+					}
+				}
+			}
+			
+			.ld-progress-steps {
+				color: $deep-purple;
+			}
+		}
+		
+		.ld-item-list {
+			.ld-item-list-item {
+				.ld-item-list-item-preview {
+					.ld-status-icon {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+		
+		#ld-profile {
+			button.ld-icon-search.ld-icon,
+			button.ld-icon-search.ld-icon.ld-expanded {
+				color: $white;
+				
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+		
+		.ld-item-list {
+			.ld-item-search {
+				h4,
+				.ld-closer{
+					color: $primary;
+				}
+				
+				.ld-item-search-wrapper {
+					background-color: $white;
+					
+					@include media('>=tablet') {
+						padding: 28px 32px;
+					}
+					
+					&:before {
+						content: none;
+					}
+				}
+				
+				.ld-item-search-fields {
+					.ld-item-search-name {
+						input[type=text] {
+							height: 44px;
+							border-radius: 20px;
+							font-size: 16px;
+							color: $primary;
+							
+							@include placeholder {
+								color: $primary;
+							}
+						}
+					}
+					
+					.ld-item-search-submit .ld-button {
+						background-color: $primary;
+						
+						&:hover {
+							background-color: $deep-purple;
+							opacity: 1;
+						}
+					}
+				}
+			}
+			
+		}
+		
+		.ld-expand-button {
+			background: transparent;
+			border: 1px solid $white;
+			min-width: 140px;
+			
+			&:hover {
+				background: $white;
+				color: $primary;
+			}
+			
+		}
+		
+		.ld-profile-summary {
+			margin: 0;
+		}
+		
+	}
+	
+	p {
+		+ .ld-course-list-content {
+			padding-top: rem-calc(40px);
+		}
+	}
+	
+	.ld-course-list-items {
+		.ld_course_grid {
+			.thumbnail.course {
+				border: 0;
+			    padding: 24px 27px;
+			    border-radius: 20px;
+			    background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+				
+			    img {
+			    	border-radius: 20px;
+			    	margin-bottom: 8px;
+			    }
+			    
+			    .caption {
+			    	padding: 0;
+			    }
+			}
+		}
+		
+		.btn-primary {
+			background-color: $primary;
+			border-color: $primary;
+		    color: $white;
+		    font-weight: 600;
+		    border-radius: 30px;
+		    padding: 8px 10px;
+		    margin-right: 17px;
+		    min-width: 180px;
+		    width: auto;
+		    
+		    &:hover,
+		    &:focus,
+		    &:active {
+		    	background-color: #57548b;
+		    	border-color: $deep-purple;
+		    }
+		}
+		
+		.ld_course_grid_button {
+			margin-top: 16px !important;
+			margin-bottom: 16px !important;
+		}
+	}
+	
+	.entry-title {
+		font-size: 18px;
+		color: $white;
+		line-height: 1.4;
+	}
+	
+	//Login and Register page
+	.ld-login-modal {
+
+        &.ld-can-register {
+            position: relative;
+            margin-bottom: -60px;
+            
+            @media only screen and (min-width: 992px) {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                margin: 0 -15px -60px;
+            }
+
+            &:before {
+                content: '';
+                background-color: #3f2a56;
+                position: absolute;
+                top: 0;
+                left: -9999px;
+                right: -9999px;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    .ld-login-modal-login,
+    .ld-login-modal-register {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+        border-radius: 50px;
+        padding: 50px;
+
+        @media only screen and (min-width: 992px) {
+            max-width: calc(50% - 30px);
+            flex-basis: calc(50% - 30px);
+            margin: 0 15px;
+        }
+    }
+
+    .ld-login-modal-login {
+        @media only screen and (max-width: 991px) {
+            margin-bottom: 40px;
+        }
+    }
+	
+	.ld-modal {
+		padding: rem-calc(124px 0 60px);
+	}
+	
+	.ld-modal-closer {
+		display: none;
+	}
+	
+	.login-submit {
+		.button-primary {
+			
+			&:hover {
+				background-color: #4d4b7b;
+				border-color: #4d4b7b;
+			}
+		}
+	}
+	
+	.ld-forgot-password-link,
+	.ld-js-register-account {
+		color: $white;
+		
+		&:hover  {
+			color: $deep-purple;
+		}
+	}
+	
+	.ld-content {
+		margin-bottom: 24px;
+	}
+	
+	.ld-modal-heading {
+		display: none;
+	}
+	
+	.login-remember {
+		input[type="checkbox"] {
+			left: 0;
+			top: 0;
+			width: 24px;
+			height: 24px;
+			opacity: 1;
+			
+			&:checked {
+				
+				~ label {
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+		//Custom checkbox
+		label {
+			padding-left: 36px;
+			position: relative;
+			
+			&:before,
+			&:after {
+				// content: '';
+				position: absolute;
+			}
+			
+			&:before {
+			    left: 0;
+			    top: 0;
+				width: 24px;
+				height: 24px;
+				border: 1px solid $white;
+				border-radius: 6px;
+			}
+			
+			&:after {
+				left: 5px;
+			    top: 7px;
+			    width: 14px;
+			    height: 7px;
+			    border: 1px solid #fff;
+			    border-width: 0 0 2px 2px;
+    			transform: rotate(-45deg);
+    			opacity: 0;
+			}
+		}
+	}
+	
+	#reg_passmail {
+		font-size: 12px;
+	}
+	
+	.ld-forgot-password-link {
+		text-decoration: underline;
+		
+		&:hover {
+			color: $white;
+			text-decoration: none;
+		}
+	}
+	
+	.learndash-pager {
+		background-color: $primary;
+		color: $white;
+		font-size: 16px;
+		line-height: 31px;
+		border-radius: 24px;
+		
+		a {
+			color: $white;
+			font-size: 32px;
+		}
+	}
+	
+	.ld-loading {
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}
+
+#ld-user-register {
+	.user_login,
+	.input {
+		margin-top: 8px;
+	}
+	
+	label {
+		width: 100%;
+	}
+	
+	.button-primary {
+			
+		&:hover {
+			background-color: #4d4b7b;
+			border-color: #4d4b7b;
+		}
+	}
+}
+
+.ld_course_grid_button {
+	.btn {
+		min-width: auto;
+	}
+}
+
+.course-list-wrapper  {
+	.learndash-wrapper {
+		.ld-item-list {
+			.ld-item-list-item {
+				.ld-item-list-item-preview {
+					.ld-status-icon {
+						margin-top: 0;
+					}
+				}
+				
+				.ld-item-name {
+					align-items: center;
+				}
+			}
+		}
+		
+		.ld-course-status.ld-course-status-enrolled {
+			.ld-progress {
+				.ld-progress-stats {
+					.ld-progress-steps {
+						color: #333;
+					}
+				}
+			
+				.ld-progress-heading  {
+					.ld-progress-stats {
+						.ld-progress-percentage {
+							
+							@include media('<=640px') {
+								margin-bottom: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.ld-progress {
+			.ld-progress-heading {
+				.ld-progress-stats {
+					.ld-progress-percentage {
+						color: $deep-purple;
+						
+					}
+				}
+			}
+		}
+		
+		.ld-breadcrumbs {
+			.ld-breadcrumbs-segments {
+				span{
+					&:after {
+						color: $primary;
+					}
+					
+					a {
+						color: $deep-purple;
+					}
+				}
+			}
+		}
+		
+		.ld-content-actions {
+			.ld-content-action {
+				.ld-course-step-back {
+					color: $white;
+					text-decoration: underline;
+					transition: color 0.3s ease-in-out;
+					
+					&:hover {
+						color: rgba($white, 0.5);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		
+	}
+	
+	.ld-tab-content {
+		.wp-block-video {
+			position: relative;
+			padding-top: 56.6%;
+			
+			video {
+				// object-fit: cover;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	
+	.post-thumbnail {
+		margin-bottom: 16px;
+	}
+	
+	.edit-link,
+	.navigation.post-navigation {
+		display: none;
+	}
+	
+	.ld-primary-color {
+		color: $white;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	
+	.has-black-color {
+		background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+	    border-radius: 20px;
+	    color: #fff;
+	    padding: rem-calc(24px);
+	    
+	 	@include media('>=tablet') {
+	 		padding: rem-calc(24px 36px);
+	 	}   
+	}
+	
+	.wp-block-embed__wrapper {
+    	position: relative;
+	    padding-top: calc((360 / 640) * 100%);
+		
+		iframe {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+	}
+	
+}
+
+.post-navigation {
+	
+	.nav-previous,
+	.nav-next {
+		a {
+			color: $white;
+			
+			&:hover {
+				color: $light-blue;
+				
+			}
+		}
+	}
+}
+
+.post-edit-link {
+	color: $white;
+	
+	&:hover {
+		color: $light-blue;
+	}
+}
+
+//Student dashboard
+
+.account-page {
+	.woocommerce-MyAccount-navigation,
+	.woocommerce-MyAccount-content  {
+		background: linear-gradient(rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+		border-radius: 30px;
+		padding: 34px 24px 24px;
+	}
+	
+	.container {
+		.woocommerce-MyAccount-navigation,
+		.woocommerce-MyAccount-content  {
+			@include media('<tablet') {
+				margin-left: -25px;
+				margin-right: -25px;
+				width: calc(100% + 50px);
+			}
+		}
+	}
+	
+	.woocommerce-MyAccount-content  {
+		@include media('>=tablet') {
+			width: 67%;
+		}
+	}
+}
+
+//Course
+.learndash-wrapper {
+	
+	.ld-course-status-seg-price {
+		.ld-course-status-content {
+			.ld-pricing {
+				.course-list-wrapper & {
+					color: #728188;
+				}
+			}
+		}
+	}
+	
+	#btn-join,
+	.btn-join {
+		.course-list-wrapper & {
+			background-color: $primary;
+		}
+		
+		&:hover {
+			.course-list-wrapper & {
+				background-color: darken($primary, 12%);
+			}
+		}
+	}
+	
+	.ld-login-modal {
+		.ld-login-modal-register {
+			.course-list-wrapper & {
+				background-color: $primary;
+			}
+		}
+		
+		.ld-login-modal-login {
+			.ld-modal-heading {
+				
+				.course-list-wrapper & {
+					color: $primary;
+				}
+			}
+		}
+		
+		input[type=submit] {
+			
+			.course-list-wrapper & {
+				background-color: $primary;
+			}
+		}
+		
+		.ld-login-modal-register {
+			.ld-button:hover {
+				
+				.course-list-wrapper & {
+					box-shadow: 0 0 0 2px #fff !important;
+				}
+			}
+		}
+	}
+	
+	.ld-button.ld-button-reverse {
+		.course-list-wrapper & {
+			color: $primary;
+		}
+
+		&:hover {
+			.course-list-wrapper & {
+				background-color: $primary;
+			}
+		}
+	}
+	
+	.ld-button {
+		.course-list-wrapper & {
+			@extend .btn;
+			font-size: 14px;
+		}
+		
+		&:hover {
+			.course-list-wrapper & {
+				border-color: #7f5da5;
+				background-color: #7f5da5;
+			}
+		}
+	}
+	
+	.ld-status-unlocked {
+		.course-list-wrapper & {
+			background-color: $primary;
+			color: $white;
+		}
+	}
+	
+	.ld-item-list {
+		.ld-item-list-item {
+			a.ld-item-name {
+				
+				.course-list-wrapper & {
+					color: $deep-purple;
+					font-weight: 500;
+				}
+				
+				&:hover {
+					.course-list-wrapper & {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+	
+	.ld-item-title {
+		
+		.course-list-wrapper & {
+			color: $deep-purple;
+			font-weight: 500;
+		}
+		
+		&:hover {
+			
+			.course-list-wrapper & {
+				color: $primary;
+			}
+		}
+	}
+	
+	.ld-status-waiting {
+		.course-list-wrapper & {
+			background-color: $primary;
+			color: $white;
+		}
+	}
+	
+	
+	.ld-lesson-status,
+	.ld-course-status {
+		
+		.course-list-wrapper & {
+			margin-bottom: 1em;
+		}
+	}
+	
+	.ld-course-status {
+		
+		&.ld-course-status-not-enrolled {
+			.course-list-wrapper & {
+				margin-top: 0;
+			}
+			
+			.ld-course-status-label,
+			.ld-course-status-price {
+				.course-list-wrapper & {
+					color: $text;
+				}
+			}
+		}
+		
+		&.ld-course-status-enrolled {
+			.course-list-wrapper & {
+				background-color: $lavender;
+			}
+		}
+		
+		.ld-course-status-mode-subscribe .ld-text {
+			.course-list-wrapper & {
+				color: $text;
+			}
+		}
+		
+		.ld-status {
+			&.ld-status-progress {
+				.course-list-wrapper & {
+					background-color: $primary;	
+				}
+			}
+			
+			&.ld-status-complete {
+				.course-list-wrapper & {
+					background-color: $deep-purple;
+				}
+			}
+		}
+	}
+	
+	.ld-course-status-seg-price {
+		.ld-course-status-content {
+			.ld-pricing {
+				.course-list-wrapper & {
+					color: $text;
+				}
+			}
+		}
+	}
+	
+	.ld-progress {
+		.ld-progress-bar {
+			.ld-progress-bar-percentage {
+				.course-list-wrapper &,
+				.single-post-wrapper & {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	
+	.ld-status-in-progress {
+		.course-list-wrapper &,
+		.single-post-wrapper & {
+			border-color: $primary #e2e7ed #e2e7ed $primary;
+		}
+	}
+	
+	.ld-status-complete {
+		.course-list-wrapper &,
+		.single-post-wrapper & {
+			background: $deep-purple;
+		}
+	}
+	
+	.ld-breadcrumbs {
+		.ld-status {
+			&.ld-status-complete {
+				.course-list-wrapper & {
+					background-color: $deep-purple;
+				}
+			}
+			
+			&.ld-status-progress {
+				.course-list-wrapper & {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	
+	.learndash_mark_complete_button {
+		.course-list-wrapper & {
+			background-color: $primary;
+		}
+		
+		&:hover {
+			.course-list-wrapper & {
+				background-color: #7f5da5;
+			}
+		}
+	}
+	
+	.ld-tabs {
+		.course-list-wrapper & {
+			margin-top: 0;
+		}
+	}
+	
+	.sfwd-mark-complete {
+		.course-list-wrapper & {
+			margin-bottom: 10px;
+		}
+	}
+	
+	.ld-profile-summary {
+		.course-list-wrapper & {
+			margin-top: 0;
+		}
+		
+		.ld-profile-card {
+			.ld-profile-avatar {
+				.course-list-wrapper & {
+					border-color: $primary;	
+				}
+			}
+			
+			.link-holder {
+				text-transform: capitalize;
+				
+				.course-list-wrapper & {
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+}
+
+.ld-login-text {
+	&:hover {
+		color: $deep-purple;
+		text-decoration: none;
+	} 
+}
+
+.card-classroom {
+	.card-wrap {
+		.course-bottom {
+			.btn {
+				width: auto;
+			}
+		}
+	}
+}
+
+.course-status-info {
+	text-align: right;
+	font-size: rem-calc(14px);
+	
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.course-cancel-sub {
+	margin: rem-calc(16px 0);
+	a {
+		color: $white;
+		text-decoration: underline;
+		
+		&:hover {
+			text-decoration: none;
+			color: rgba($white, 0.5);
+		}
+	}
+}
+
+.course-enrolled-date,
+.course-expire-date {
+	p {
+	    background: $primary;
+	    border-radius: 12px;
+	    padding: 2px 7px;
+	    display: inline-block;
+	    margin-bottom: 6px;
+	}
+}
+
+#invoice,
+.cancel-subscription {
+	
+    @include media('>=tablet') {
+    	max-width: 700px;
+    }
+}
+
+//Invoice
+#invoice {
+	max-width: 100%;
+    background-color: #615e9b;
+    
+    @include media('<tablet') {
+    	padding: 25px 18px;
+    }
+    
+    
+    .fancybox-button {
+    	@include media('<tablet') {
+    		top: -6px;
+    	}
+    }
+    
+    .fancybox-button {
+		svg {
+			path {
+				fill: $white;
+			}
+		}
+	}
+}
+
+.invoice-holder {
+	color: $white;
+	
+	a {
+		text-decoration: underline;
+		color: $white;
+		
+		&:hover {
+			text-decoration: none;
+			color: rgba($white, 0.5);
+		}
+	}
+	
+    .logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    table {
+        color: #fff;
+        font-size: 14px;
+        width: 100%;
+
+        thead {
+            background-color: #3f2a56;
+        }
+
+        tbody {
+            tr {
+                &:nth-of-type(2n) {
+                    background-color: #8682d5;
+                }
+            }
+        }
+
+        th {
+            border-top-color: transparent;
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            border: 0;
+            
+            @include media('<tablet') {
+            	padding-left: 10px;
+		    	padding-right: 10px;
+		    }
+        }
+    }
+}
+
+.invoice-id,
+.grand-total,
+.meta-info {
+    color: #fff;
+}
+
+.invoice-id,
+.grand-total {
+    text-align: right;
+    font-size: 16px;
+}
+
+.grand-total {
+    margin:24px 0;
+}
+
+.meta-info {
+    text-align: center;
+    font-size: 12px;
+}
+
+.cancel-subscription {
+	text-align: center;
+	
+	ul {
+		list-style-type: none;
+		margin: 0 -6px;
+		padding: 0;
+		
+		@include media('>=tablet') {
+			justify-content: center;
+		}
+		
+		li {
+			padding-bottom: 12px;
+			
+			@include media('>=tablet') {
+				padding: 0 6px;
+			}
+		}
+		
+		.btn {
+			padding: 10px;
+			min-width: 110px;
+		}
+	}
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+	box-shadow: none;
+}

@@ -1,0 +1,1074 @@
+.page-template-tpl-booking  {
+	#header {
+		@include media('>=desktop') {
+			display: none;
+		}
+	}
+}
+
+.booking-block {
+	padding-top: 80px;
+
+	@include media('>=desktop') {
+		padding-top: 120px;
+	}
+
+	.wizard {
+		@include media('>=widescreen') {
+			max-width: 97.5%;
+		}
+
+		> .content {
+			background: none;
+			margin: 0;
+			padding: 0;
+
+			> .body {
+				position: static;
+				padding: 0;
+				width: 100%;
+				height: auto;
+				
+				label.error {
+					color: $red;
+					// position: absolute;
+					// bottom: -29px;
+					font-size: 14px;
+					margin-left: 30px;
+				}
+
+				> label {
+
+				}
+
+				.input-wrap {
+					display: flex;
+					flex-direction: column;
+
+					input {
+						order: -1;
+					}
+
+					label {
+						&.error {
+							font-size: 14px;
+							margin: 7px 0 0;
+							color: $red;
+						}
+					}
+
+					// .error {
+					// 	order: 1;
+					// }
+				}
+
+				input {
+					border: 1px solid rgba($white, 0.1);
+
+					&.error {
+						// background: transparent;
+						background: linear-gradient(137.53deg, rgba(97, 94, 155, 0.1) 6.73%, rgba(255, 255, 255, 0.1) 109.12%);
+						border-color: $red;
+						color: $white;
+					}
+				}
+			}
+		}
+		
+		> .actions {
+			display: none !important;
+		}
+	}
+
+	.row {
+		.row {
+			margin: 0 -5px;
+
+			.col-12 {
+				padding: 0 5px;
+			}
+		}
+	}
+
+	.booking-logo {
+		margin-bottom: 30px;
+		display: none;
+		
+		@include media('>=desktop') {
+			display: block;
+		}
+	}
+
+	.steps,
+	.booking-form-steps {
+		ul {
+			@extend %listreset;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			margin-bottom: 40px;
+
+			@include media('>=desktop') {
+				margin-bottom: 52px;
+				justify-content: space-between;
+			}
+
+			&:before {
+				content:"";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				height: 1px;
+				right: 0;
+				transform: translateY(-50%);
+				background: $white;
+				z-index: -1;
+				display: none;
+				
+				@include media('>=desktop') {
+					display: block;
+				}
+			}
+
+			li {
+				font-size: 12px;
+				font-weight: 400;
+				padding: 0 10px;
+				width: auto;
+				position: relative;
+				
+				// @include media('>=375px') {
+				// 	font-size: 15px;
+				// }
+				
+				@include media('>=desktop') {
+					background: $deep-purple;
+					font-size: 18px;
+				}
+				
+				&:before {
+					content:"";
+					position: absolute;
+					top: 50%;
+					right: -3px;
+					width: 10px;
+					height: 10px;
+					border-style: solid;
+					border-width: 2px 2px 0 0;
+					border-color: $white $white transparent transparent;
+					transform: translateY(-50%) rotate(45deg);
+					
+					@include media('>=desktop') {
+						display: none;
+					}
+				}
+				
+				&.disabled {
+					opacity: 1 !important;
+				}
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+					
+					&:before {
+						display: none;
+					}
+				}
+
+				&.active {
+					font-weight: 700;
+				}
+
+				&.disabled {
+					a {
+						color: $white;
+						cursor: default;
+					}
+				}
+
+				&.current {
+					a {
+						font-weight: 700;
+						background: transparent;
+					}
+				}
+
+				a {
+					display:inline-block;
+					vertical-align:top;
+					background: none !important;
+					margin: 0;
+					cursor: pointer;
+					padding: 0;
+					
+					&:hover {
+						margin: 0;
+						padding: 0;
+					}
+
+					.number {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	.booking-form-steps {
+		ul {
+			li {
+				@include media('>=375px') {
+					font-size: 15px;
+				}
+			}
+		}
+	}
+
+	.input-wrap {
+		.checkbox-wrap {
+			margin-top: 12px;
+		}
+	}
+
+	.radio-wrap,
+	.checkbox-wrap {
+		margin-bottom: 20px;
+	}
+
+	.select-wrap {
+		margin-bottom: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: 0px 0px 30px rgba(63, 42, 86, 0.3);
+		select {
+			display: none;
+		}
+	}
+
+	.training-checkbox {
+		.checkbox-wrap {
+			margin-bottom: 39px;
+		}
+	}
+
+	.col-content {
+		padding-top: 105px;
+		@include media('>=desktop') {
+			padding-right: 0;
+			padding-top: 0;
+		}
+
+		p {
+			margin-bottom: 60px;
+			@include media('>=desktop') {
+				margin-bottom: 82px;
+			}
+		}
+
+		h3 {
+			font-size: 22px;
+			font-weight: 700;
+			letter-spacing: -.06em;
+			margin-bottom: 29px;
+		}
+
+		input[type="checkbox"] {
+			&#offer {
+				+ label,
+				+ span {
+					font-weight: 400;
+				}
+			}
+			
+			&:checked {
+				& + label {
+					&:before {
+						background: $primary;
+					}
+
+					&:after {
+						top: 10px;
+					}
+				}
+			}
+
+			+ label,
+			+ span {
+				font-size: 18px;
+				line-height: 25px;
+				font-weight: 600;
+				padding-right: 15px !important;
+
+				&:before{
+					background: transparent;
+					top: 4px;
+				}
+
+				.time {
+					display: block;
+					font-size: 16px;
+					margin: 10px 0 0;
+					text-transform: uppercase;
+					letter-spacing: .03em;
+				}
+			}
+		}
+
+		input[type="radio"] {
+			&:checked {
+				& + label {
+					&:before {
+						// background: $primary;
+						border-color: $white;
+					}
+
+					&:after {
+						left: 3px;
+						top: 5px;
+						width: 14px;
+						height: 14px;
+						background: $white;
+					}
+				}
+			}
+
+			+ label,
+			+ span {
+				font-size: 18px;
+				line-height: 25px;
+				font-weight: 600;
+				padding-right: 15px !important;
+
+
+				&:before{
+					background: transparent;
+					top: 2px;
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+
+		.trance-channel {
+			padding-top: 43px;
+			.checkbox-wrap {
+				padding: 0 3px;
+			}
+			input[type="checkbox"] {
+				&:checked {
+					& + label {
+						background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+						// border-color: transparent;
+						border: none;
+						box-shadow: none;
+
+						&:before {
+							background: $primary;
+						}
+
+						&:after {
+							top: 50%;
+							left: 45px;
+							margin-top: -4px;
+						}
+					}
+				}
+
+				+ label,
+				+ span {
+					// border: 3px solid rgba($white, 0.1);
+					border-radius: 30px;
+					font-weight: 400;
+					padding: 20px 20px 20px 85px !important;
+					width: 100%;
+					box-shadow: 0 3px 0 rgba($white, 0.1), 0 -3px 0 rgba($white, 0.1), 3px 0 0 rgba($white, 0.1), -3px 0 0 rgba($white, 0.1);
+
+					&:before{
+						background: transparent;
+						top: 50%;
+						left: 40px;
+						transform: translateY(-50%);
+					}
+
+					.label-wrap {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						&:before {
+							content:"";
+							position: absolute;
+							top: 0;
+							left: 0;
+
+						}
+					}
+
+					.time {
+						display: block;
+						font-size: 16px;
+						font-weight: 600;
+						text-transform: uppercase;
+						margin-top: 0;
+					}
+
+					.price {
+						max-width: 75px;
+						margin-left: 20px;
+						color: rgba($white, 0.5);
+						text-align: right;
+						display: block;
+					}
+				}
+			}
+		}
+
+		.preferred-certificate {
+			padding-top: 43px;
+		}
+
+		.about-trainging {
+			padding-top: 43px;
+		}
+
+		.checkbox-border {
+			// padding-top: 43px;
+			input[type="checkbox"] {
+				&:checked {
+					& + label {
+						background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+						// border-color: transparent;
+						border: none;
+
+						&:before {
+							background: $primary;
+						}
+
+						&:after {
+							top: 50%;
+							left: 45px;
+							margin-top: -4px;
+						}
+					}
+				}
+
+				+ label,
+				+ span {
+					border: 3px solid rgba($white, 0.1);
+					border-radius: 30px;
+					font-weight: 400;
+					padding: 20px 20px 20px 85px !important;
+					width: 100%;
+
+					@include media('>=desktop') {
+						padding: 32px 40px 33px 85px !important;
+					}
+
+					&:before{
+						background: transparent;
+						top: 50%;
+						left: 40px;
+						transform: translateY(-50%);
+					}
+
+					.label-wrap {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						&:before {
+							content:"";
+							position: absolute;
+							top: 0;
+							left: 0;
+
+						}
+					}
+				}
+			}
+		}
+
+		.radio-border {
+			// padding-top: 43px;
+			input[type="radio"] {
+				&:checked {
+					& + label {
+						background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+						// border-color: transparent;
+						border: none;
+
+						&:before {
+							background: $primary;
+						}
+
+						&:after {
+							top: 50%;
+							left: 43px;
+							margin-top: -7px;
+						}
+					}
+				}
+
+				+ label,
+				+ span {
+					border: 3px solid rgba($white, 0.1);
+					border-radius: 30px;
+					font-weight: 400;
+					padding: 20px 20px 20px 85px !important;
+					width: 100%;
+
+					@include media('>=desktop') {
+						// padding-right: 40px !important;
+						padding: 32px 40px 33px 85px !important;
+					}
+
+					&:before{
+						background: transparent;
+						top: 50%;
+						left: 40px;
+						transform: translateY(-50%);
+					}
+
+					.label-wrap {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						&:before {
+							content:"";
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
+				}
+			}
+
+			&.credit-card {
+				input[type="radio"] {
+					&:checked {
+						& + label {
+							background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+							// border-color: transparent;
+							border: none;
+
+							&:after {
+								top: 42px;
+								left: 43px;
+
+								@include media('>=desktop') {
+									top: 54px;
+								}
+							}
+						}
+					}
+
+					+ label,
+					+ span {
+						&:before {
+							top: 42px;
+
+							@include media('>=desktop') {
+								top: 54px;
+							}
+						}
+					}
+
+					// + label,
+					// + span {
+					// 	border: 3px solid rgba($white, 0.1);
+					// 	border-radius: 30px;
+					// 	font-weight: 400;
+					// 	padding: 20px 20px 20px 85px !important;
+					// 	width: 100%;
+
+					// 	&:before{
+					// 		background: transparent;
+					// 		top: 50%;
+					// 		left: 40px;
+					// 		transform: translateY(-50%);
+					// 	}
+
+					// 	.label-wrap {
+					// 		display: flex;
+					// 		align-items: center;
+					// 		justify-content: space-between;
+
+					// 		&:before {
+					// 			content:"";
+					// 			position: absolute;
+					// 			top: 0;
+					// 			left: 0;
+					// 		}
+					// 	}
+					// }
+				}
+			}
+		}
+
+		.step-margin {
+			margin-bottom: 50px;
+			@include media('>=desktop') {
+				margin-bottom: 81px;
+			}
+		}
+
+		.billing-wrap {}
+
+		.payment-contact {
+			border-radius: 30px;
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+			padding: 20px;
+			font-size: 14px;
+			line-height: 25px;
+			position: relative;
+			padding-right: 100px;
+			margin-bottom: 50px;
+
+			@include media('>=desktop') {
+				display: flex;
+				font-size: 18px;
+				padding: 30px 150px 30px 40px;
+				margin-bottom: 81px;
+			}
+
+			.title {
+				display: block;
+
+				@include media('>=desktop') {
+					margin-right: 50px;
+				}
+			}
+
+			.mail {
+				font-weight: 600;
+			}
+
+			.change {
+				color: $white;
+				text-decoration: underline;
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translateY(-50%);
+
+				@include media('>=desktop') {
+					right: 40px;
+				}
+
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.payment-type {
+			margin-bottom: 50px;
+
+			@include media('>=desktop') {
+				margin-bottom: 81px;
+			}
+
+			.label-wrap {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				img {
+					@include media('<tablet') {
+						max-width: 100px;
+					}
+				}
+			}
+
+			.credit-card {
+				input[type="radio"] + label {
+					@include media('<=tablet') {
+						padding-right: 30px !important;
+						padding-left: 75px !important;
+						padding-top: 30px !important;
+					}
+				}
+				.label-wrap {
+					margin-bottom: 20px;
+
+					img {
+						@include media('<tablet') {
+							display: none;
+						}
+					}
+				}
+				.row {
+					// margin-left: -35px;
+					margin-left: -50px;
+
+					// @include media('>=tablet') {
+					// 	margin-left: -50px;
+					// }
+				}
+			}
+		}
+
+		.confirmation-box {
+			p {
+				margin-bottom: 30px;
+			}
+			.confirmation-list {
+				@extend %listreset;
+				list-style: none;
+				padding: 0 20px;
+				border-radius: 30px;
+				background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+
+				@include media('>=tablet') {
+					padding: 0 40px;
+				}
+
+				li {
+					padding: 22px 0;
+					position: relative;
+					font-size: 14px;
+					line-height: 25px;
+					display: block;
+
+					@include media('>=tablet') {
+						display: flex;
+						flex-wrap: wrap;
+						font-size: 18px;
+						padding: 30px 0;
+					}
+
+					& + li {
+						&:before {
+							content: "";
+							@extend %white-gradient-border;
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							height: 2px;
+						}
+					}
+
+					a {
+						color: $white;
+
+						&:hover {
+							color: $gray;
+						}
+					}
+
+					.title {
+						display: block;
+						@include media('>=tablet') {
+							width: 30%;
+							padding-right: 20px;
+						}
+					}
+
+					.desc {
+						font-weight: 600;
+						@include media('>=tablet') {
+							width: 70%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.col-sidebar{
+		order: -1;
+		
+		@include media('>=desktop') {
+			order: 0;
+			padding-left: 60px;
+		}
+		
+		.sidebar-wrap {
+			margin: 0 -25px;
+			position: fixed;
+			width: 100%;
+			top: 99px;
+			z-index: 9;
+			@include media('>=desktop') {
+				display: flex;
+				justify-content: flex-end;
+				margin: 0;
+				position: static;
+			}
+		}
+		.sidebar-box {
+			padding: 0 25px 25px;
+			display: none;
+			
+			@include media('>=desktop') {
+				padding: 0 30px 30px;
+				border-radius: 10px;
+				max-width: 400px;
+				display: block !important;
+			}
+		}
+
+		.sidebar-lists {
+			@extend %listreset;
+			max-height: 500px;
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			li {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 30px 0;
+				position: relative;
+
+				&:before {
+					content:"";
+					@extend %gray-gradient-border;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 2px;
+				}
+
+				.text {
+					max-width: 210px;
+					padding-right: 20px;
+
+					.title {
+						display: block;
+						font-size: 18px;
+						line-height: 25px;
+						font-weight: 600;
+						margin-bottom: 5px;
+					}
+
+					.time {
+						display: block;
+						font-size: 16px;
+					}
+				}
+
+				.price {
+					font-size: 18px;
+					font-weight: 400;
+				}
+			}
+		}
+
+		.coupon-form {
+			padding: 30px 0;
+			.form-wrap {
+				display: flex;
+	
+				input[type="text"] {
+					color: $deep-purple;
+					// border: 0.15em solid rgba(255, 255, 255, 0.1);
+					background: linear-gradient(137.53deg, rgba(97, 94, 155, 0.5) 6.73%, rgba(97, 94, 155, 0.1) 109.12%);
+					box-shadow: none;
+					border: none;
+					
+					@include placeholder {
+						color: $deep-purple;
+					}
+				}
+	
+				input[type="submit"] {
+					min-width: 110px;
+					margin-left: 15px;
+					background: transparent;
+					color: $primary;
+	
+					&:hover {
+						background: $deep-purple;
+						color: $white;
+					}
+				}
+			}
+			
+			.coupon-error {
+				color: $red;
+				font-size: 16px;
+				margin: 5px 0 0;
+			}
+		}
+
+		.subtotal {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+			padding: 30px 0;
+
+			&:before {
+				content:"";
+				@extend %gray-gradient-border;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+			}
+
+			.subtotal-title {
+				max-width: 150px;
+				display: block;
+				padding-right: 30px;
+			}
+
+			.subtotal-price {
+				font-weight: 600;
+			}
+		}
+
+		.total {
+			display: flex;
+			position: relative;
+			justify-content: space-between;
+			padding-top: 30px;
+
+			&:before {
+				content:"";
+				@extend %gray-gradient-border;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+			}
+
+			.total-desc {
+				.total-title {
+					display: block;
+					font-weight: 400;
+				}
+
+				.tax {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+
+			.total-price {
+				.price {
+					font-size: 25px;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+	.form-footer {
+		padding-top: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		@include media('>=desktop') {
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 60px;
+		}
+		
+		.link {
+			font-weight: 600;
+			text-decoration: underline;
+			font-size: 18px;
+			color: $white;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.btn {
+			order: -1;
+			width: 100%;
+			margin-bottom: 30px;
+			@include media('>=desktop') {
+				order: 0;
+				width: auto;
+				margin-bottom: 0;
+				min-width: 350px;
+			}
+
+			&:hover {
+				background: darken($deep-purple, 5%);
+			}
+		}
+	}
+
+	.form-heading {
+		margin-bottom: 30px;
+		@include media('>=tablet') {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		h3 {
+			margin-bottom: 0;
+		}
+
+		strong {
+			font-weight: 600;
+		}
+
+		a {
+			color: $white;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.booking-summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	// background: rgba($white, 0.4);
+	background: #523F67;
+	padding: 20px 25px;
+	
+	.booking-summary-opener {
+		font-size: 14px;
+		line-height: 25px;
+		padding-right: 20px;
+		position: relative;
+		cursor: pointer;
+		
+		&.active {
+			&:before {
+				transform: translateY(-50%) rotate(-45deg);
+				margin-top: 3px;
+			}
+		}
+		
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 3px;
+			width: 8px;
+			height: 8px;
+			border-width: 1px 1px  0 0;
+			border-style: solid;
+			border-color: $white $white transparent transparent;
+			transform: translateY(-50%) rotate(136deg);
+			margin-top: -3px;
+		}
+	}
+	
+	.booking-summary-price {
+		font-weight: 600;
+	}
+}

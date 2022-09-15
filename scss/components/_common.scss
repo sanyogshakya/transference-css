@@ -1,0 +1,534 @@
+.booking-page {
+	background: $deep-purple;
+
+	.page-section {
+		background: none;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.page-section {
+	position: relative;
+	z-index: 0;
+
+	&:before {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: $deep-purple;
+		z-index: -1;
+	}
+
+	&:after {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('assets/images/Stars.png');
+		z-index: -1;
+	}
+
+	.home & {
+		&:before {
+			background: linear-gradient(180deg, #2E1747 23.71%, #615E9B 100%);
+			@include media('>=desktop') {
+				top: 137px;
+			}
+		}
+	}
+}
+
+#wrapper {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	@extend %clearfix;
+	max-width: 1170px;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 25px;
+
+	@include media('>=large') {
+		padding: 0 15px;
+	}
+
+	&.small-container {
+		max-width: 977px;
+	}
+}
+
+.section {
+	padding: 40px 0;
+	position: relative;
+
+	@include media('>=desktop') {
+		padding: 60px 0;
+	}
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	outline: none;
+	border-radius: 50px;
+	color: $white;
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 700;
+	text-align: center;
+	padding: 19px 20px 18px;
+	background: $primary;
+	border: 2px solid $primary;
+	letter-spacing: -0.0036em;
+	width: 100%;
+	
+	@include media('>=375px') {
+		min-width: 250px;
+	}
+
+	@include media('>=desktop') {
+		width: auto;
+		min-width: 231px;
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&:hover {
+		background-color: $deep-purple;
+		border-color: $deep-purple;
+		color: $white;
+	}
+
+	&.btn-sm-border {
+		@include media('<desktop') {
+			background: none;
+			border-color: $white;
+
+			&:hover {
+				background-color: $deep-purple;
+				border-color: $deep-purple;
+				color: $white;
+			}
+		}
+	}
+
+	&.btn-border {
+		background: none;
+		border-color: $white;
+
+		&:hover {
+			background-color: $primary;
+			border-color: $primary;
+			color: $white;
+		}
+	}
+}
+
+.read-more {
+	font-weight: 600;
+}
+
+.link {
+	text-decoration: underline;
+	color: $white;
+
+	&:hover {
+		text-decoration: none;
+		color: rgba($white, 0.5);
+	}
+}
+
+.disabled {
+	opacity: 0.5 !important;
+	cursor: not-allowed;
+	
+	&:hover {
+		opacity: 0.5 !important;
+	}
+}
+
+.bg-gray {
+	background: $lavender;
+	color: $text;
+
+	.btn{
+		&.btn-border {
+			border-color: $primary;
+			color: $primary;
+
+			&:hover {
+				border-color: $primary;
+				background-color: $primary;
+				color: $white;
+			}
+		}
+	}
+}
+
+.bg-purple-gradient {
+	@extend %background-gradient1;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.img-wrap {
+	a {
+		display: block;
+		position: relative;
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+figure{
+	&.wp-caption{
+		@include media('<tablet') {
+			width: 100% !important;
+		}
+	}
+
+	figcaption {
+		font-size: 16px;
+	}
+}
+
+.section-heading {
+	padding-top: 40px;
+
+	h2 {
+		line-height: 0.7;
+	}
+}
+
+.heading {
+	position: relative;
+	z-index: 1;
+	// margin-bottom: 36px;
+	margin-bottom: 45px;
+	max-width: 530px;
+	@include media('>=desktop') {
+		margin-bottom: 80px;
+	}
+
+	&.text-center {
+		margin: 0 auto 45px;
+
+		@include media('>=desktop') {
+			margin-bottom: 80px;
+		}
+
+		p {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	h2 {
+		margin: 0;
+
+		& + p {
+			margin-top: 22px;
+		}
+	}
+
+	p {
+		max-width: 480px;
+	}
+}
+
+.heading-block {
+	margin-bottom: 40px;
+	@include media('>=desktop') {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 41px;
+	}
+
+	.text-wrap {
+		@include media('>=desktop') {
+			max-width: 480px;
+			margin-right: 57px;
+		}
+
+		h2 {
+			letter-spacing: -0.03em;
+			margin-bottom: 20px;
+		}
+
+		p {
+			margin-bottom: 37px;
+			line-height: 1.4;
+			@include media('>=desktop') {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.btn-wrap {
+
+	}
+}
+
+.pb-0 {
+	padding-bottom: 0 !important;
+}
+
+.p-medium {
+	padding: 60px 0;
+	@include media('>=desktop') {
+		padding: 86px 0;
+	}
+}
+
+.p-large {
+	padding: 60px 0;
+	@include media('>=desktop') {
+		padding: 114px 0;
+	}
+}
+
+.sub-title {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 15px;
+	letter-spacing: 0.01em;
+	// text-transform: uppercase;
+}
+
+blockquote {
+	border-width: 3px;
+	border-left-color: $deep-purple;
+	padding-left: 1.1em;
+	margin: 0 0 1.3em;
+
+	p {
+		font-size: 18px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.admin-bar {
+	.fancybox-button {
+		top: 46px;
+		@include media('>=782px') {
+			top: 32px;
+		}
+	}
+}
+
+.dots {
+	ul {
+		@extend %listreset;
+
+		li {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			font-size: 0;
+			// background: $deep-purple;
+			// background: $lavender;
+			background: rgba($white, 0.1);
+
+			& + li {
+				margin-top: 42px;
+			}
+
+			&:nth-child(2) {
+				opacity: 0.6;
+			}
+			&:nth-child(3) {
+				opacity: 0.4;
+			}
+			&:nth-child(4) {
+				opacity: 0.1;
+			}
+		}
+	}
+}
+
+.spot {
+	display: none;
+	position: absolute;
+	// top: 0;
+	// left: 0;
+	background: rgba($lavender, 0.03);
+	border-radius: 50%;
+	z-index: -1;
+
+	@include media('>=desktop') {
+		display: block;
+	}
+
+	&.large {
+		width: 1085px;
+		height: 1085px;
+		&:before {
+			width: 900px;
+			height: 900px;
+		}
+	}
+	&.medium {
+		width: 875px;
+		height: 875px;
+		&:before {
+			width: 730px;
+			height: 730px;
+		}
+	}
+	&.small {
+		width: 406px;
+		height: 406px;
+		&:before {
+			width: 364px;
+			height: 364px;
+		}
+	}
+
+	&:before {
+		content:"";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background: rgba($lavender, 0.03);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.woocommerce-orders-table {
+	border-collapse: collapse !important;
+	td,
+	th {
+		border-color: #E5E5E5;
+	}
+}
+
+.account-page {
+	.woocommerce-MyAccount-content {
+		.button {
+			padding: 0;
+			min-width: 0 !important;
+			background: transparent;
+			border-radius: 0;
+			border: none;
+			font-size: 0;
+			margin-right: 10px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			&:hover {
+				&:before {
+					color: $primary;
+				}
+			}
+			
+			&:before {
+				font-size: 22px;
+				font-family: 'FontAwesome';
+				color: $white;
+				transition: color 0.3s ease;
+			}
+			
+			&.pay {
+				&:before {
+					content: "\f0d6";
+				}
+			}
+			
+			&.view {
+				&:before {
+					content: "\f06e";
+				}
+			}
+			
+			&.cancel {
+				&:before {
+					content: "\f00d";
+				}
+			}
+
+		}
+	}
+}
+
+.page-section {
+	padding-bottom: 100px;
+	
+	@include media('>=desktop') {
+		padding-bottom: 120px;
+	}
+	
+	.section {
+		&:last-of-type {
+			padding-bottom: 0 !important;
+		}
+	}
+}
+
+.woocommerce-error,
+.woocommerce-info, 
+.woocommerce-message {
+	background: $lavender;
+	border-top: none !important;
+	
+	.button  {
+		// @extend .btn;
+		background: $deep-purple !important;
+		min-width: 0;
+		border-radius: 30px;
+		color: $white !important;
+		
+		&:hover {
+			background: $primary !important;
+		}
+	}
+}
+
+.woocommerce-info, 
+.woocommerce-message {
+	&:before {
+		color: $deep-purple;
+	}
+}

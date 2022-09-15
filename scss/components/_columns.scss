@@ -1,0 +1,254 @@
+.card-image {
+	margin-bottom: 28px;
+
+	&.card-large {
+		.card-wrap {
+			padding-bottom: 20px;
+			@include media('>=desktop') {
+				padding-bottom: 30px;
+			}
+		}
+		.img-wrap {
+			@include media('>=desktop') {
+				height: 237px;
+				margin-bottom: 14px;
+			}
+		}
+
+		h4 {
+			@include media('>=large') {
+				margin-bottom: 15px;
+			}
+		}
+
+		.text-wrap {
+			max-width: 500px;
+		}
+	}
+
+	&.card-medium {
+		.card-wrap {
+			&:before {
+				height: 2px;
+				width: 35px;
+			}
+		}
+
+		.img-wrap {
+			@include media('>=desktop') {
+				height: 183px;
+				margin-right: 4px;
+				margin-bottom: 19px;
+			}
+		}
+
+		h4 {
+			margin-bottom: 10px;
+		}
+
+		p {
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 19px;
+				@include media('>=desktop') {
+					margin-bottom: 21px;
+				}
+			}
+
+			a.map {
+				text-decoration: underline;
+
+				&:hover,
+				&:focus {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.card-wrap {
+		position: relative;
+		padding-bottom: 1px;
+
+		&:hover,
+		&:focus {
+			&:before {
+				width: 100%;
+			}
+		}
+
+		&:before {
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 70px;
+			height: 4px;
+			background: $light-blue;
+			border-radius: 15px;
+			transition: 0.3s ease;
+		}
+	}
+
+	.img-wrap {
+		height: 120px;
+		margin-bottom: 15px;
+		position: relative;
+
+		@include media('>=desktop') {
+			margin-bottom: 13px;
+		}
+
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	h4 {
+		@include media('>=desktop') {
+			margin-bottom: 14px;
+		}
+	}
+
+	p {
+		margin: 0 -7px 19px 0;
+		line-height: 1.2;
+
+		@include media('>=desktop') {
+			margin-bottom: 23px;
+		}
+	}
+}
+
+.image-with-content-card {
+	margin-bottom: 28px;
+
+	@include media('>=tablet') {
+		margin-bottom: 49px;
+	}
+
+	.card-wrap {
+		position: relative;
+		padding-bottom: 1px;
+
+		@include media('>=tablet') {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&:hover,
+		&:focus {
+			&:before {
+				width: 100%;
+
+				@include media('>=tablet') {
+					width: calc(100% - 300px);
+				}
+			}
+		}
+
+		&:before {
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 70px;
+			height: 4px;
+			background: $light-blue;
+			border-radius: 15px;
+			transition: 0.3s ease;
+
+			@include media('>=tablet') {
+				left: calc(270px + 30px);
+			}
+		}
+	}
+
+	.img-wrap {
+		height: 147px;
+		margin-bottom: 15px;
+		position: relative;
+
+		@include media('>=tablet') {
+			width: 270px;
+			margin-bottom: 0;
+		}
+
+		a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.text {
+		@include media('>=tablet') {
+			width: calc(100% - 270px);
+			padding-left: 30px;
+		}
+	}
+
+	h4 {
+		@include media('>=desktop') {
+			margin-bottom: 14px;
+		}
+	}
+
+	p {
+		margin: 0 -7px 19px 0;
+		line-height: 1.2;
+		font-size: 16px;
+
+		@include media('>=desktop') {
+			margin-bottom: 23px;
+		}
+	}
+}
+
+.three-columns {
+	.card-image {
+		@include media('>=desktop') {
+			margin-bottom: 14px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.two-columns {
+	.card-image {
+		margin-bottom: 40px;
+		@include media('>=desktop') {
+			margin-bottom: 57px;
+		}
+	}
+}

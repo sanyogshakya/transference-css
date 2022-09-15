@@ -1,0 +1,84 @@
+// list reset
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// clearfix
+%clearfix {
+ &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+
+// transition
+%transition {
+ transition: all 0.3s ease-in-out;
+}
+
+// justify nav
+%justify {
+ text-align: justify;
+ font-size: 1px;
+ line-height: 0px;
+ > * {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+ }
+ &:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+ }
+}
+
+
+
+/// * Helper class to truncate and add ellipsis to a string too long for it to fit
+/// * on a single line.
+/// * 1. Prevent content from wrapping, forcing it on a single line.
+/// * 2. Add ellipsis at the end of the line.
+
+.ellipsis {
+  white-space: nowrap; /* 1 */
+  text-overflow: ellipsis; /* 2 */
+  overflow: hidden;
+}
+
+%background-gradient {
+    background: rgb(71,51,91); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(71,51,91,1) 0%, rgba(48,25,72,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(71,51,91,1) 0%,rgba(48,25,72,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(71,51,91,1) 0%,rgba(48,25,72,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+%background-gradient1 {
+  background: -moz-linear-gradient(rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%);
+  background: -o-linear-gradient(rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%);
+  background: linear-gradient(rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%);
+}
+
+%white-gradient-border{
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+%gray-gradient-border{
+  background: -moz-linear-gradient(-45deg,  rgba(33,33,33,0.2) 0%, rgba(33,33,33,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(33,33,33,0.2) 0%,rgba(33,33,33,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(33,33,33,0.2) 0%,rgba(33,33,33,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
